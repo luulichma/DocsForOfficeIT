@@ -4,11 +4,15 @@ Module biên soạn PHẦN 2 TẬP II:
 BẢNG TÍNH TRỰC TUYẾN VÀ PHÂN TÍCH SỐ LIỆU VỚI GOOGLE SHEETS
 """
 
+import os
+
 from docx_helper import (
     add_heading_1, add_heading_2, add_heading_3, add_p,
     add_step, add_callout, add_screenshot_placeholder,
-    add_styled_table, add_checklist_table
+    add_styled_table, add_checklist_table, add_image
 )
+
+IMG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "images")
 
 def build_vol2_part_2(doc):
     add_heading_1(doc, "PHẦN 2: BẢNG TÍNH TRỰC TUYẾN VÀ PHÂN TÍCH SỐ LIỆU VỚI GOOGLE SHEETS")
@@ -60,7 +64,7 @@ def build_vol2_part_2(doc):
         "  3. Tệp Excel sẽ được mở trực tiếp trên Google Sheets. Bạn có thể tiếp tục tính toán và chia sẻ cho cả phòng cùng làm việc chung."
     ])
 
-    add_screenshot_placeholder(doc, "Giao diện Google Sheets: Menu Cài đặt vùng Việt Nam (Settings Locale Vietnam) và thanh công cụ kẻ viền All borders, gộp ô Merge.")
+    add_image(doc, os.path.join(IMG_DIR, "vol2_img5_sheets_settings_borders.png"), "Giao diện Google Sheets: Menu Cài đặt vùng Việt Nam (Settings Locale Vietnam) và thanh công cụ kẻ viền All borders, gộp ô Merge.")
 
     add_heading_3(doc, "4. Kết quả mong đợi")
     add_p(doc, "Bảng tính Google Sheets được cấu hình chuẩn mực múi giờ và định dạng Việt Nam, bảng kẻ khung rõ nét, số liệu tài chính có dấu chấm/phẩy phân cách hàng nghìn chuyên nghiệp.")
@@ -120,7 +124,7 @@ def build_vol2_part_2(doc):
         "Kéo công thức xuống: Rê chuột vào góc dưới bên phải ô F4 sao cho con trỏ biến thành dấu cộng đen nhỏ (+) > Nhấn giữ chuột kéo xuống dưới (hoặc nhấp đúp chuột trái vào dấu cộng đen)."
     ])
 
-    add_screenshot_placeholder(doc, "Tính năng Smart Suggestions trên Google Sheets tự động gợi ý =SUM(...) và ô thông báo tự động điền toàn bộ cột (Auto-fill).")
+    add_image(doc, os.path.join(IMG_DIR, "vol2_img6_sheets_smart_suggestions.png"), "Tính năng Smart Suggestions trên Google Sheets tự động gợi ý công thức =SUM(...) khi gõ dấu =.")
 
     add_heading_3(doc, "4. Kết quả mong đợi")
     add_p(doc, "Bảng tính tự động tính toán tổng số liệu nhanh chóng; học viên biết tận dụng phím Tab để nhận gợi ý công thức thông minh của Google.")
@@ -183,7 +187,7 @@ def build_vol2_part_2(doc):
         "5. Bấm nút 'Đã xong' (Done). Bây giờ, đồng nghiệp có thể thoải mái nhập tên và số lượng ở cột ngoài, nhưng khi họ chạm vào ô công thức thì hệ thống sẽ khóa lại, không cho phép xóa!"
     ])
 
-    add_screenshot_placeholder(doc, "Giao diện viền đen sẫm của Chế độ xem bộ lọc (Filter view) và thanh bên phải Khóa bảo vệ dải ô (Protect sheets and ranges).")
+    add_image(doc, os.path.join(IMG_DIR, "vol2_img7_sheets_filter_view_protect.png"), "Giao diện viền đen sẫm của Chế độ xem bộ lọc (Filter view) và thanh Khóa bảo vệ dải ô (Protect ranges).")
 
     add_heading_3(doc, "4. Kết quả mong đợi")
     add_p(doc, "Bảng tính trực tuyến được quản trị an toàn, chuyên nghiệp: mọi người cùng truy cập nhưng lọc dữ liệu độc lập không gây xung đột, công thức tính toán được khóa bảo vệ an toàn tuyệt đối.")
