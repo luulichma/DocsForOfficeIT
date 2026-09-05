@@ -4,11 +4,15 @@ Module biên soạn PHẦN 1 TẬP II:
 SOẠN THẢO VÀ CỘNG TÁC VĂN BẢN TRỰC TUYẾN VỚI GOOGLE DOCS
 """
 
+import os
+
 from docx_helper import (
     add_heading_1, add_heading_2, add_heading_3, add_p,
     add_step, add_callout, add_screenshot_placeholder,
-    add_styled_table, add_checklist_table
+    add_styled_table, add_checklist_table, add_image
 )
+
+IMG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "images")
 
 def build_vol2_part_1(doc):
     add_heading_1(doc, "PHẦN 1: SOẠN THẢO VÀ CỘNG TÁC VĂN BẢN TRỰC TUYẾN VỚI GOOGLE DOCS")
@@ -54,7 +58,7 @@ def build_vol2_part_1(doc):
         "  4. Muốn gửi ban hành/trình ký: Chọn 'Tài liệu PDF (.pdf)'."
     ])
 
-    add_screenshot_placeholder(doc, "Giao diện Google Docs: Ô đổi tên tài liệu góc trên bên trái, biểu tượng đám mây Đã lưu vào Drive và menu Tệp > Tải xuống > Microsoft Word / PDF.")
+    add_image(doc, os.path.join(IMG_DIR, "vol2_img1_docs_autosave.png"), "Giao diện Google Docs: Ô đổi tên tài liệu góc trên bên trái, biểu tượng đám mây Đã lưu vào Drive và menu Tệp > Tải xuống Word/PDF.")
 
     add_heading_3(doc, "4. Kết quả mong đợi")
     add_p(doc, "Học viên nắm vững cách tạo văn bản mới bằng lệnh 'docs.new', tự tin làm việc mà không sợ mất bài khi cúp điện, trao đổi tệp Word và Docs qua lại không gặp trở ngại.")
@@ -124,7 +128,7 @@ def build_vol2_part_1(doc):
         "Toàn bộ đường viền đen biến mất hoàn toàn, phần đầu văn bản đẹp hoàn mỹ!"
     ])
 
-    add_screenshot_placeholder(doc, "Cửa sổ Thiết lập trang (Page setup) trên Google Docs: Khổ giấy A4, lề Trái 3cm, Trên/Dưới/Phải 2cm và bảng thuộc tính Table properties ẩn viền 0pt.")
+    add_image(doc, os.path.join(IMG_DIR, "vol2_img2_docs_page_setup.png"), "Cửa sổ Thiết lập trang (Page setup) trên Google Docs: Khổ giấy A4, lề Trái 3cm, Trên/Dưới/Phải 2cm chuẩn Nghị định 30.")
 
     add_heading_3(doc, "4. Kết quả mong đợi")
     add_p(doc, "Văn bản trên Google Docs có giao diện thanh lịch, chuẩn mực theo Nghị định 30/2020/NĐ-CP, không khác biệt so với soạn trên Microsoft Word chuyên nghiệp.")
@@ -184,7 +188,7 @@ def build_vol2_part_1(doc):
         "Người chủ trì văn bản khi mở bài ra chỉ cần bấm nút Dấu tích xanh (Chấp nhận đề xuất) hoặc Dấu X (Từ chối đề xuất) là xong!"
     ])
 
-    add_screenshot_placeholder(doc, "Cửa sổ Chia sẻ phân quyền (Người xem, Nhận xét, Chỉnh sửa) và thanh công cụ chuyển đổi giữa chế độ Chỉnh sửa (Editing) và Đề xuất (Suggesting).")
+    add_image(doc, os.path.join(IMG_DIR, "vol2_img3_docs_share_suggesting.png"), "Cửa sổ Chia sẻ phân quyền (Người xem, Nhận xét, Chỉnh sửa) và Chế độ Đề xuất chỉnh sửa (Suggesting) kèm vết duyệt bài.")
 
     add_heading_3(doc, "4. Kết quả mong đợi")
     add_p(doc, "Cả nhóm có thể cùng mở một bản dự thảo, cùng nhìn thấy con trỏ màu của nhau đang gõ trực tiếp trên màn hình, bình luận trao đổi rôm rả ngay trên văn bản mà không cần họp hành phức tạp.")
@@ -245,7 +249,7 @@ def build_vol2_part_1(doc):
         "4. Bấm 'Khôi phục' để xác nhận. Ngay lập tức, văn bản sẽ quay ngược thời gian trở về trạng thái hoàn hảo như cũ!"
     ])
 
-    add_screenshot_placeholder(doc, "Cửa sổ Lịch sử phiên bản (Version history): Cột mốc thời gian bên phải, mã màu của từng người và nút lớn Khôi phục phiên bản này.")
+    add_image(doc, os.path.join(IMG_DIR, "vol2_img4_docs_version_history.png"), "Cửa sổ Lịch sử phiên bản (Version history): Truy vết người sửa theo mã màu và nút Khôi phục phiên bản này.")
 
     add_heading_3(doc, "4. Kết quả mong đợi")
     add_p(doc, "Người dùng hoàn toàn xóa bỏ nỗi sợ bị người khác phá hỏng bài; nắm trong tay 'cỗ máy thời gian' để truy vết công việc và cứu dữ liệu trong nháy mắt.")
